@@ -21,6 +21,7 @@ controller.right.onEvent(ControllerButtonEvent.Repeated, function () {
 controller.left.onEvent(ControllerButtonEvent.Repeated, function () {
     Yndlings_figur.vx = -50
 })
+let mySprite: Sprite = null
 let Max_jumps = 0
 let Number_of_jumps = 0
 let Yndlings_figur: Sprite = null
@@ -58,4 +59,24 @@ game.onUpdate(function () {
     if (Yndlings_figur.vx < 0) {
         Yndlings_figur.image.flipX()
     }
+})
+game.onUpdate(function () {
+    mySprite = sprites.create(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `, SpriteKind.Player)
 })
